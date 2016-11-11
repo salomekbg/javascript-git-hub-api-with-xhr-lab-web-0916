@@ -46,7 +46,7 @@ describe('index', () => {
     let el
 
     before(() => {
-      el = { dataset: { repository: 'test-repo', username: 'octocat' } }
+      el = { dataset: { repository: 'test-repo1', username: 'octocat' } }
       xhr = sinon.useFakeXMLHttpRequest()
       window.XMLHttpRequest = xhr
 
@@ -77,7 +77,7 @@ describe('index', () => {
       it('calls out to Github', () => {
         getCommits(el)
         expect(requests.length).toBe(1)
-        expect(requests[0].url).toBe('https://api.github.com/repos/octocat/test-repo/commits')
+        expect(requests[0].url).toBe('https://api.github.com/repos/octocat/test-repo1/commits')
       })
     })
 
@@ -85,7 +85,7 @@ describe('index', () => {
       it('calls out to Github', () => {
         getBranches(el)
         expect(requests.length).toBe(1)
-        expect(requests[0].url).toBe('https://api.github.com/repos/octocat/test-repo/branches')
+        expect(requests[0].url).toBe('https://api.github.com/repos/octocat/test-repo1/branches')
       })
     })
 
