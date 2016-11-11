@@ -19,7 +19,9 @@ function displayCommits(event, data) {
 }
 
 function getCommits(el) {
+  debugger
   const name = el.dataset.repo;
+
   const username = document.getElementById('username').value
   const url = 'https://api.github.com/repos/'
   const req = new XMLHttpRequest();
